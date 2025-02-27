@@ -1,11 +1,10 @@
 ---
 title: Git
+description: Система контроля версий Git
 layout: base-layout
 time: 25-05-24
 ---
 
-[Соглашение о коммитах](/wiki/docs/git/conventional-commits)
-
-[Семантическое версионирование](/wiki/docs/git/semver)
-
-[Настройка репозитория](/wiki/docs/git/setting-up-repository) 
+[Соглашение о коммитах](/docs/git/conventional-commits)
+[Семантическое версионирование](/docs/git/semver)
+[Настройка репозитория](/docs/git/setting-up-repository) 

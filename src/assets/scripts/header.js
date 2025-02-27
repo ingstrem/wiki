@@ -1,0 +1,1 @@
+const loc = location.pathname;
