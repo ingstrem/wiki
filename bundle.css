@@ -6,6 +6,19 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .container {
+      /* font-size: 14px; */
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1200px;
+}
 .page-header {
   display: block;
 }
@@ -17,6 +30,24 @@ body {
   letter-spacing: 0.15px;
   color: #ffffff;
 }
-.page-footer {
-  
-}
+     /*footer*/
+     .page-footer {
+       padding-top: 16px;
+       padding-bottom: 16px;
+       grid-row: 3 / 4;
+       display: flex;
+       justify-content: space-between;
+       background-color: rgba(0, 0, 0, 0.2);
+     }
+
+     .footer-caption {
+       margin: 0;
+       padding: 0;
+       text-align: center;
+       color: #808080;
+
+       font-size: 14px;
+       font-style: normal;
+       font-weight: 400;
+       line-height: normal;
+     }
