@@ -1,0 +1,35 @@
+.article {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  grid-row: 2 / 3;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+/*link*/
+ main.article.container a {
+  padding: 6px 12px;
+  display: block;
+  color: #000000;
+  background-image: linear-gradient(to top, #645b4c, #817562);
+  box-shadow: 0 4px 5px -3px #000000;
+}
+
+main.article.container a:hover {
+  text-decoration: none;
+}
+
+/*headings*/
+
+main.article.container h3 {
+  margin-top: 32px;
+}
+
+
+    .sign {
+      background-image: linear-gradient(to top, #657c84, #677f87);
+    }

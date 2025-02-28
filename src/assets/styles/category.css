@@ -1,0 +1,15 @@
+.page-category {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  grid-row: 2 / 3;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.page-category h2 {
+  margin-top: 32px;
+}
