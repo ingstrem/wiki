@@ -1,6 +1,6 @@
 module.exports = function (eleventyConfig) {
 
-  // eleventyConfig.addPassthroughCopy('src/css')
+  eleventyConfig.addPassthroughCopy('src/CNAME')
   eleventyConfig.addPassthroughCopy({ static: '/' });
 
   return {
