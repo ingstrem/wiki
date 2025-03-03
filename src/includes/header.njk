@@ -1,5 +1,8 @@
+{%- set dafaultTitle = 'Главная' %}
+
 <!DOCTYPE html>
 <html lang="ru">
+{# {%- set pageTitle %}{% if title %}{{ title }} | {{ ti }}{% endif %}{% endset -%} #}
 
 <head>
   <meta charset="UTF-8">
@@ -17,7 +20,12 @@
   <link rel="manifest" href="/favicons/site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <title>{{ title }} | wiki</title>
+  <title>
+    {% if title %}
+	    {{ title  }}
+    {% else %}
+	    {{ dafaultTitle | safe }}
+    {% endif %} | wiki</title>
   <meta name="description" content="{{description}}">
   <script src="/bundle.js"></script>
   <style>

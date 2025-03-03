@@ -4,11 +4,11 @@ layout: base-layout
 time: 25-05-24
 ---
 
-[Настройка фаервола в Ubuntu с помощью утилиты UFW](/wiki/docs/linux/ufw)
+[Настройка фаервола в Ubuntu с помощью утилиты UFW](/docs/linux/ufw)
 
-[Настройка SSH](/wiki/docs/linux/ssh)
+[Настройка SSH](/docs/linux/ssh)
 
-[Настройка SAMBA](/wiki/docs/linux/samba)
+[Настройка SAMBA](/docs/linux/samba)
 
-[Установка и настройка клиента uTorrent](/wiki/docs/linux/utorrent)
+[Установка и настройка клиента uTorrent](/docs/linux/utorrent)
 
