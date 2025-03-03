@@ -2,10 +2,13 @@
 title: Ansible
 description: Что такое Ansible
 layout: article-layout
-time: 27-02-25
+time: 27 февраля 2025
 ---
 
 # Ansible
+<time>{{time}}</time>
+
+---
 
 ![Static Badge](https://img.shields.io/badge/ansible-black)
 
