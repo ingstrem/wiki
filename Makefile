@@ -1,0 +1,2 @@
+develop:
+	npm run serve
