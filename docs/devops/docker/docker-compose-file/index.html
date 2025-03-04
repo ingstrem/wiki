@@ -22,9 +22,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>
     
-	    Docker
+	    Мониторинг процессов
      | wiki</title>
-  <meta name="description" content="">
+  <meta name="description" content="Мониторинг процессов">
   <script src="/bundle.js"></script>
   <style>
     hr {
@@ -164,8 +164,49 @@
 
 
   <main class="page-main container"> 
-    <p><a href="/docs/docker/security">Безопасность</a>
-<a href="/docs/docker/garbage-removal">Удаление мусора</a></p>
+    <h1>Структура файла docker-compose.yml</h1>
+<p><time>4 марта 2025</time></p>
+<hr>
+<p><code>env_file</code> указывает путь к файлу с переменными, которые будут использоваться для работы контейнера. Чтобы не указывать все переменные, вы можете поместить их в один файл и сослаться на него. Вы можете передать как путь к отдельному файлу, так и список таких путей. По умолчанию это файл .env .</p>
+<pre><code>env_file:  
+  - ./a.env  
+  - ./b.env
+</code></pre>
+<p><code>environment</code> определяет пары ключ: значение для переменных, которые нужны при работе контейнера. Вы можете использовать два разных синтаксиса - map и list.</p>
+<pre><code>environment: 
+  RACK_ENV: development 
+  SHOW: &quot;true&quot; 
+  USER_INPUT:
+</code></pre>
+<h3>resources</h3>
+<p><code>resources</code> настраивает ограничения физических ресурсов для контейнера, работающего на платформе. Эти ограничения могут быть настроены как:</p>
+<ul>
+<li>
+<p><code>limits</code>: Платформа должна не допускать, чтобы контейнер выделял больше.</p>
+</li>
+<li>
+<p><code>reservations</code>: Платформа должна гарантировать, что контейнер может выделить как минимум указанный объем.</p>
+</li>
+</ul>
+<pre><code>services:
+  frontend:
+    image: example/webapp
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+          pids: 1
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+</code></pre>
+<h3>cpus</h3>
+<p><code>cpus</code> настраивает ограничение или резервирование того, сколько доступных ресурсов ЦП (количество ядер) может использовать контейнер.</p>
+<h3>memory</h3>
+<p><code>memory</code> настраивает ограничение или резервирование объема памяти, который может выделить контейнер, задается как строка, выражающая байтовое значение .</p>
+<h3>pids</h3>
+<p><code>pids</code> настраивает лимит PID контейнера, задаваемый как целое число.</p>
 
   </main> 
 
