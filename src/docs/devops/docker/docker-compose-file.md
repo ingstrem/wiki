@@ -1,11 +1,12 @@
 ---
-title: Мониторинг процессов
-description: Мониторинг процессов
+title: Структура файла docker-compose
+description: Структура файла docker-compose
 layout: base-layout
 time: 4 марта 2025
 ---
 
 # Структура файла docker-compose.yml
+
 <time>{{time}}</time>
 
 ---
@@ -13,17 +14,17 @@ time: 4 марта 2025
 `env_file` указывает путь к файлу с переменными, которые будут использоваться для работы контейнера. Чтобы не указывать все переменные, вы можете поместить их в один файл и сослаться на него. Вы можете передать как путь к отдельному файлу, так и список таких путей. По умолчанию это файл .env .
 
 ```
-env_file:  
-  - ./a.env  
+env_file:
+  - ./a.env
   - ./b.env
 ```
 
 `environment` определяет пары ключ: значение для переменных, которые нужны при работе контейнера. Вы можете использовать два разных синтаксиса - map и list.
 
 ```
-environment: 
-  RACK_ENV: development 
-  SHOW: "true" 
+environment:
+  RACK_ENV: development
+  SHOW: "true"
   USER_INPUT:
 ```
 
@@ -48,7 +49,7 @@ services:
         reservations:
           cpus: '0.25'
           memory: 20M
-```          
+```
 
 ### cpus
 
