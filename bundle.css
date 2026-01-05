@@ -7,11 +7,11 @@ body {
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
-      /* font-size: 14px; */
+      font-size: 14px;
   }
-}
+} */
 
 .container {
   margin: 0 auto;
@@ -34,7 +34,7 @@ p {
 
 code {
   padding: 3px 6px;
-  border-radius: 6px; 
+  border-radius: 6px;
   font-family: 'Ubuntu Mono', monospace;
   font-size: 14px;
   color: #B71C1C;
@@ -89,14 +89,29 @@ a:hover {
 
 .header-nav__list {
   margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  column-gap: 30px;
 }
 
 .header-link {
   margin: 0;
   display: block;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.header-link:hover {
+  text-decoration: none;
+}
+
+.header-link.active {
+  color: #212121
 }
      /*footer*/
      .page-footer {
