@@ -1,21 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        <url>
-            <loc>https://wiki.ingstrem.ru/</loc>
-            <lastmod>2025-02-18</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://wiki.ingstrem.ru/linux</loc>
-            <lastmod>2025-02-18</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>1.0</priority>
-        </url>
-        <url>
-            <loc>https://wiki.ingstrem.ru/backend</loc>
-            <lastmod>2025-02-18</lastmod>
-            <changefreq>monthly</changefreq>
-            <priority>1.0</priority>
-        </url>
-    </urlset>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://wiki.ingstrem.ru/</loc>
+	<lastmod>2026-01-05T10:06:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/linux/</loc>
+	<lastmod>2026-01-05T10:06:44+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/git/</loc>
+	<lastmod>2026-01-05T10:06:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/backend/</loc>
+	<lastmod>2026-01-05T10:06:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/node-js/</loc>
+	<lastmod>2026-01-05T10:06:45+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/nginx/</loc>
+	<lastmod>2026-01-05T10:06:47+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/frontend/</loc>
+	<lastmod>2026-01-05T10:06:47+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/</loc>
+	<lastmod>2026-01-05T10:06:47+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/git/semver/</loc>
+	<lastmod>2026-01-05T10:06:48+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/testing/</loc>
+	<lastmod>2026-01-05T10:06:48+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/linux/ufw/</loc>
+	<lastmod>2026-01-05T10:06:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/git/setting-up-repository/</loc>
+	<lastmod>2026-01-05T10:06:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/backend/api-design/</loc>
+	<lastmod>2026-01-05T10:06:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/backend/api-perfomance/</loc>
+	<lastmod>2026-01-05T10:06:50+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/git/conventional-commits/</loc>
+	<lastmod>2026-01-05T10:06:51+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/bash/</loc>
+	<lastmod>2026-01-05T10:06:51+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/process-monitoring/</loc>
+	<lastmod>2026-01-05T10:06:51+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/ansible/</loc>
+	<lastmod>2026-01-05T10:06:52+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/backend/api-security/</loc>
+	<lastmod>2026-01-05T10:06:52+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/performance-monitoring/</loc>
+	<lastmod>2026-01-05T10:06:55+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/docker/</loc>
+	<lastmod>2026-01-05T10:06:56+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/docker/garbage-removal/</loc>
+	<lastmod>2026-01-05T10:06:57+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+<url>
+	<loc>https://wiki.ingstrem.ru/docs/devops/docker/docker-compose-file/</loc>
+	<lastmod>2026-01-05T10:06:59+01:00</lastmod>
+	<priority>0.2</priority>
+</url>
+</urlset>

@@ -7,11 +7,11 @@ body {
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
-      /* font-size: 14px; */
+      font-size: 14px;
   }
-}
+} */
 
 .container {
   margin: 0 auto;
@@ -34,7 +34,7 @@ p {
 
 code {
   padding: 3px 6px;
-  border-radius: 6px; 
+  border-radius: 6px;
   font-family: 'Ubuntu Mono', monospace;
   font-size: 14px;
   color: #B71C1C;
