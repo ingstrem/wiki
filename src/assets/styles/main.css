@@ -13,11 +13,25 @@ body {
   }
 } */
 
+.page-body {
+  margin: 0;
+
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr;
+
+  font-family: Roboto, sans-serif;
+
+  font-family: Roboto, Arial, sans-serif;
+  background-image: url('https://storage.yandexcloud.net/xdr-bucket/wiki-vulong-development/bg.jpg');
+  background-repeat: repeat;
+}
+
 .container {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1200px;
+  max-width: 1280px;
 }
 
 p {
@@ -55,4 +69,14 @@ a:not(:last-of-type) {
 
 a:hover {
   text-decoration: underline;
+}
+
+.page-main {
+  margin: 0 auto;
+  padding: 40px 15px 20px 15px;
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  column-gap: 40px;
 }

@@ -1,24 +1,22 @@
 ---
 title: Удаление мусора
-layout: base-layout
+layout: article-layout
 time: 14 июля 2024
 ---
 
 # Удаление мусора:
+
 <time>{{time}}</time>
 
 ---
 
-
-
 Если вы никогда не задумывались о том, сколько же места реально занято на вашей машине Docker’ом, то можете быть неприятно удивлены выводом этой команды:
 
-```
-$ docker system df
+```bash
+$docker ssystem df
 ```
 
 Здесь отображено использование диска Docker’ом в различных разрезах:
-
 
 - образы (images) – общий размер образов, которые были скачаны из хранилищ образов и построены в вашей системе;
 - контейнеры (containers) – общий объем дискового пространства, используемый запущенными контейнерами (имеется ввиду общий объем слоев чтения-записи всех контейнеров);
@@ -37,8 +35,9 @@ $ docker system df
 
 Давайте представим себе систему, на которой установлен девственно чистый Docker, ни разу не участвовавший в запуске контейнеров и сборке образов. Его отчет об использовании дискового пространства будет выглядеть так:
 
-```
+```bash
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         0          0          0B         0B
 Containers     0          0          0B         0B
@@ -48,7 +47,7 @@ Build Cache    0          0          0B         0B
 
 Запустим какой-нибудь контейнер, например, NGINX:
 
-```
+```bash
 $ docker container run --name www -d -p 8000:80 nginx:1.16
 ```
 
@@ -59,6 +58,7 @@ $ docker container run --name www -d -p 8000:80 nginx:1.16
 
 ```
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          1          126M       0B (0%)
 Containers     1          1          2B         0B (0%)
@@ -77,6 +77,7 @@ $ docker exec -ti www \
 
 ```
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          1          126M       0B (0%)
 Containers     1          1          104.9MB    0B (0%)
@@ -94,12 +95,15 @@ $ find /var/lib/docker -type f -name test.img
 
 Не вдаваясь в подробности можно отметить, что файл test.img удобно расположился на уровне чтения-записи, управляемом драйвером overlay2. Если же мы остановим наш контейнер, то хост подскажет нам, что это место, в принципе, можно высвободить:
 
-```
-# Stopping the www container
+```bash
+#Stopping the www container #
+
 $ docker stop www
 
-# Visualizing the impact on the disk usage
+# Visualizing the impact on the disk usage #
+
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          1          126M       0B (0%)
 Containers     1          0          104.9MB    104.9MB (100%)
@@ -109,11 +113,11 @@ Build Cache    0          0          0B         0B
 
 Как мы можем это сделать? Удалением контейнера, которое повлечет за собой очистку соответствующего пространства на уровне чтения-записи.
 
-
 С помощью следующей команды вы можете удалить все установленные контейнеры одним махом и очистить ваш диск от всех созданных ими на уровне чтения-записи файлов:
 
 ```
 $ docker container prune
+
 WARNING! This will remove all stopped containers.
 Are you sure you want to continue? [y/N] y
 Deleted Containers:
@@ -126,6 +130,7 @@ Total reclaimed space: 104.9MB
 
 ```
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          0          126M       126M (100%)
 Containers     0          0          0B         0B
@@ -151,7 +156,6 @@ $ docker container rm -f $(docker container ls -aq)
 
 Несколько лет назад размер образа в несколько сотен мегабайт был совершенно нормальным: образ Ubuntu весил 600 Мегабайт, а образ Microsoft .Net – несколько Гигабайт. В те лохматые времена скачивание одного только образа могло нанести большой урон вашему свободному месту на диске, даже если вы расшаривали уровни между образами. Сегодня – хвала великим – образы весят намного меньше, но даже в этом случае можно быстро забить имеющиеся ресурсы, если не принимать некоторых мер предосторожности.
 
-
 Есть несколько типов образов, которые напрямую не видны конечному пользователю
 
 - intermediate образы, на основе которых собраны другие образы в – они не могут быть удалены, если вы используете контейнеры на базе этих самых «других» образов;
@@ -162,6 +166,7 @@ $ docker container rm -f $(docker container ls -aq)
 
 ```
 $ docker image ls -f dangling=true
+
 REPOSITORY  TAG      IMAGE ID         CREATED             SIZE
 none      none   21e658fe5351     12 minutes ago      71.3MB
 ```
@@ -176,6 +181,7 @@ $ docker image rm $(docker image ls -f dangling=true -q)
 
 ```
 $ docker image prune
+
 WARNING! This will remove all dangling images.
 Are you sure you want to continue? [y/N] y
 Deleted Images:
@@ -197,7 +203,6 @@ $ docker image rm $(docker image ls -q)
 ### Использование диска томами
 
 Тома (volumes) применяются для хранения данных за пределами файловой системы контейнера. Например, если мы хотим сохранить результаты работы какого-либо приложения, чтобы использовать их как-то еще. Частым примером являются базы данных.
-
 
 Давайте запустим контейнер MongoDB, примонтируем к нему внешний по отношению к контейнеру том, и восстановим из него бэкап базы данных (у нас он доступен в файле bck.json):
 
@@ -227,6 +232,7 @@ $ docker volume rm $(docker volume ls -q)
 
 ```
 $ docker volume prune
+
 WARNING! This will remove all local volumes not used by at least one container.
 Are you sure you want to continue? [y/N] y
 Deleted Volumes:
@@ -264,13 +270,14 @@ Build Cache    0          0          0B         0B
 Давайте соберем вторую версию нашего приложения, уже с использованием BuildKit. Для этого нам лишь необходимо установить переменную DOCKER_BUILDKIT в значение 1:
 
 ```
-$ DOCKER_BUILDKIT=1 docker build -t app:2.0 
+$ DOCKER_BUILDKIT=1 docker build -t app:2.0
 ```
 
 Если мы сейчас проверим использование диска, то увидим, что теперь там участвует кэш сборки (buid-cache):
 
 ```
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         2          0          109.3MB    109.3MB (100%)
 Containers     0          0          0B         0B
@@ -282,6 +289,7 @@ Build Cache    11         0          8.949kB    8.949kB
 
 ```
 $ docker builder prune
+
 WARNING! This will remove all dangling build cache.
 Are you sure you want to continue? [y/N] y
 Deleted build cache objects:
@@ -298,6 +306,7 @@ Total reclaimed space: 8.949kB
 
 ```
 $ docker system prune
+
 WARNING! This will remove:
   - all stopped containers
   - all networks not used by at least one container

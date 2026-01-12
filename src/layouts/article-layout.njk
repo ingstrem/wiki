@@ -1,7 +1,10 @@
+{# Шаблон страницы документации #}
+
 {% include 'header.njk' %}
-
-  <main class="article container"> 
-    {{ content | safe }}
+  <main class="page-main"> 
+    {% include 'sidebar.njk' %}
+    <div class="article">
+      {{ content | safe }}
+    </div>
   </main> 
-
 {% include 'footer.njk' %}

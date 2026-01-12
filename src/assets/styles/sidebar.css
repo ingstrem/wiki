@@ -1,0 +1,8 @@
+/* Боковая навигационная панель */
+
+.sidebar {
+  grid-column: 1 / 2;
+
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}

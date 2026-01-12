@@ -1,9 +1,12 @@
+{# Шаблон категории #}
+
 {% include 'header.njk' %}
-
-  <main class="page-category container"> 
-    {{ content | safe }}
-
-    <span></span>
+  <main class="page-main"> 
+    {% include 'sidebar.njk' %}
+      <div class="page-category">
+      {{ content | safe }}
+    </div>
   </main> 
+
 
 {% include 'footer.njk' %}

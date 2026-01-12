@@ -1,6 +1,6 @@
 ---
-title: Тестирование 
-layout: base-layout
+title: Тестирование
+layout: category-layout
 time: 09-10-24
 ---
 

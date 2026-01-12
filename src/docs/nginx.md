@@ -1,6 +1,6 @@
 ---
 title: Nginx
-layout: base-layout
+layout: category-layout
 time: 29-06-2024
 ---
 

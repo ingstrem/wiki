@@ -1,23 +1,24 @@
 ---
 title: Node.js
-layout: base-layout
+layout: category-layout
 time: 31-01-24
 ---
+
 # Установка и удаление
 
 #### Для проверки версии node.js и npm введите соответственно
+
 `node -v`
 
 `npm -v`
 
 ### Для того чтобы проверить установлена ли node.js введите
 
-`dpkg --get-selections | grep node` 
+`dpkg --get-selections | grep node`
 
 ### Для того чтобы удалить node.js введите
 
 `sudo apt purge nodejs`
-
 
 ## Установка Node.js в Node Version Manager (nvm)
 
@@ -60,6 +61,7 @@ time: 31-01-24
 `nvm uninstall 14.0`
 
 ## Установка Node.js из репозиториев Ubuntu
+
 Для обновления репозитория введите команду:
 
 `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -`
