@@ -1,9 +1,5 @@
 .article {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  grid-row: 2 / 3;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -11,7 +7,7 @@
 }
 
 /*link*/
- main.article.container a {
+main.article.container a {
   padding: 6px 12px;
   display: block;
   color: #000000;
@@ -30,6 +26,6 @@ main.article.container h3 {
 }
 
 
-    .sign {
-      background-image: linear-gradient(to top, #657c84, #677f87);
-    }
+.sign {
+  background-image: linear-gradient(to top, #657c84, #677f87);
+}

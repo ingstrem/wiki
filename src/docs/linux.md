@@ -1,6 +1,6 @@
 ---
 title: Linux
-layout: base-layout
+layout: category-layout
 time: 25-05-24
 ---
 
@@ -11,4 +11,3 @@ time: 25-05-24
 [Настройка SAMBA](/docs/linux/samba)
 
 [Установка и настройка клиента uTorrent](/docs/linux/utorrent)
-

@@ -1,7 +1,7 @@
 ---
 title: Backend
 description: Backen tech
-layout: base-layout
+layout: category-layout
 time: 27-09-24
 ---
 
