@@ -1,6 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moped" width="250px" height="250px" viewBox="0 0 24 24" stroke-width="1.00" stroke="rgba(1, 1, 1, 1)" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="50%" cy="50%" r="50%" stroke="none" stroke-width="0" fill="rgba(0, 0, 0, 1)"/><g transform="translate(2.40, 2.40) scale(0.8)"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="18" cy="17" r="2"/><path d="M5 16v1a2 2 0 0 0 4 0v-5h-3a3 3 0 0 0 -3 3v1h10a6 6 0 0 1 5 -4v-5a2 2 0 0 0 -2 -2h-1"/><line x1="6" y1="9" x2="9" y2="9"/></g>
-  
-  
-  
-  
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_64_115)">
+<path d="M137.5 87.5H162.5V112.5H137.5V87.5ZM137.5 137.5H162.5V212.5H137.5V137.5ZM150 25C81 25 25 81 25 150C25 219 81 275 150 275C219 275 275 219 275 150C275 81 219 25 150 25ZM150 250C94.875 250 50 205.125 50 150C50 94.875 94.875 50 150 50C205.125 50 250 94.875 250 150C250 205.125 205.125 250 150 250Z" fill="#EB6B27"/>
+</g>
+<defs>
+<clipPath id="clip0_64_115">
+<rect width="300" height="300" fill="white"/>
+</clipPath>
+</defs>
 </svg>

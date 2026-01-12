@@ -1,6 +1,15 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
 html,
 body {
   margin: 0;
@@ -214,6 +223,11 @@ a:hover {
 
 .page-category p:not(:last-of-type) {
   margin-bottom: 32px;
+}
+
+.page-category img {
+  height: 60px;
+  width: auto;
 }
 .article {
   width: 100%;
