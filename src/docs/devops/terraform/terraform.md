@@ -18,6 +18,14 @@ caption: Автоматизация, совместное использован
 
 ## Форматирование и валидация (format & validate)
 
-[terraform fmt](/docs/devops/vim)
+[terraform fmt](/docs/devops/terraform/terraform-fmt)
 [terraform validate](/docs/devops/vim)
 [TFLint](/docs/devops/terraform/tflint)
+
+## Тестирование
+
+[Unit Testing](/docs/devops/vim)
+[Contract Testing](/docs/devops/vim)
+[Integration Testing](/docs/devops/terraform/tflint)
+[End to End Testing](/docs/devops/vim)
+[Testing Modules](/docs/devops/vim)

@@ -52,3 +52,8 @@
 .page-category p:not(:last-of-type) {
   margin-bottom: 32px;
 }
+
+.page-category img {
+  height: 60px;
+  width: auto;
+}
