@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -27,104 +29,31 @@
   <meta name="description" content="Unix Оболочка Bash">
   <script src="/bundle.js" defer></script>
   <style>
-    --green: #698567;
-    --white: #ffffff;
-    hr {
-      width: 100%;
-      height: 1px;
-      border: none;
-      background-color: #616161;
+    :root {
+      --green: #698567;
+      --light-green: #B5C1AD;
+      --white: #FFFFFF;
+      --orange: #CC7730;
+      --grey: #807C72;
+      --dark-grey: #616161;
+
     }
+
+    
 
     h1,h2,h3,h4,h5 {
       margin: 0;
       padding: 0;
-      line-height: 143%;
-      letter-spacing: 0.15px;
-      color: #b5c1ad;
+      
     }
 
-    h1 {
-      margin-top: 16px;
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 700;
-    }
+    
 
-    h2 {
-      margin-top: 10px;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 700;
 
-    }
-
-    h3 {
-      margin-top: 10px;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    h4 {
-      margin-top: 8px;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    pre {
-      display: block;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 16px;
-        padding-right: 16px;
-
-        font-family: 'Ubuntu Mono', monospace;
-        font-weight: 400;
-        font-style: normal;
-        
-
-        border-radius: 4px;
-
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    pre code {
-      padding: 0;
-      background-color: transparent;
-      color: #ffffff;
-    }
 
     time {
       font-size: 12px;
       color: #808080;
-    }
-
-    .page-body {
-      margin: 0;
-
-      display: grid;
-      grid-template-rows: min-content 1fr min-content;
-      grid-template-columns: 1fr;
-
-      font-family: Roboto, sans-serif;
-
-      font-family: Roboto, Arial, sans-serif;
-      background-image: url('https://storage.yandexcloud.net/xdr-bucket/wiki-vulong-development/bg.jpg');
-      background-repeat: repeat;
-    }
-
-    .page-main {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      grid-row: 2 / 3;
-      width: 100%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
     }
 
     li:not(header) {
@@ -143,14 +72,12 @@
 
   </style>  
 </head>
-
 <body class="page-body">
   <header class="page-header">
     <div class="container">
       <p class="header-title">Ingstrem</p>
       <span class="header-subtitle">Software &amp; applications</span>
-    </div>
-    
+    </div> 
       <nav class="header-nav">
       <div class="container">
         <ul class="header-nav__list">
@@ -165,14 +92,16 @@
           </li>
         </ul>
       </div>
-      </nav>
-    
+      </nav>   
   </header> 
 
 
-
-  <main class="article container"> 
-    <h1>Сценарии Bash</h1>
+  <main class="page-main"> 
+    <aside class="sidebar">
+  
+  </aside>
+    <div class="article">
+      <h1>Сценарии Bash</h1>
 <hr>
 <p><time>27 февраля 2025</time></p>
 <p>Bash (Bourne Again Shell) — это мощная оболочка Unix и интерпретатор командного языка, которая используется по умолчанию в большинстве дистрибутивов Linux и macOS. Она предоставляет интерфейс командной строки для взаимодействия с операционной системой, выполнения команд и автоматизации задач с помощью сценариев оболочки. Bash поддерживает переменные, управляющие структуры, функции и подстановку команд, что делает его универсальным для системного администрирования, задач DevOps и написания сценариев общего назначения. Благодаря возможности объединять команды в цепочки, перенаправлять ввод/вывод и использовать множество встроенных команд и утилит, он является важным инструментом для разработчиков и системных администраторов при управлении и автоматизации рабочих процессов в Unix-подобных средах.</p>
@@ -181,8 +110,8 @@
 <a href="https://www.tpointtech.com/bash">Руководство по написанию сценариев Bash</a>
 <a href="https://app.daily.dev/tags/bash?ref=roadmapsh">Explore top posts about Bash</a></p>
 
+    </div>
   </main> 
-
 <footer class="page-footer">
   <span></span>
   <p class="footer-caption">wiki.ingstrem.ru</p>

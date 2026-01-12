@@ -1,5 +1,7 @@
 
 
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -27,104 +29,31 @@
   <meta name="description" content="">
   <script src="/bundle.js" defer></script>
   <style>
-    --green: #698567;
-    --white: #ffffff;
-    hr {
-      width: 100%;
-      height: 1px;
-      border: none;
-      background-color: #616161;
+    :root {
+      --green: #698567;
+      --light-green: #B5C1AD;
+      --white: #FFFFFF;
+      --orange: #CC7730;
+      --grey: #807C72;
+      --dark-grey: #616161;
+
     }
+
+    
 
     h1,h2,h3,h4,h5 {
       margin: 0;
       padding: 0;
-      line-height: 143%;
-      letter-spacing: 0.15px;
-      color: #b5c1ad;
+      
     }
 
-    h1 {
-      margin-top: 16px;
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 700;
-    }
+    
 
-    h2 {
-      margin-top: 10px;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 700;
 
-    }
-
-    h3 {
-      margin-top: 10px;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    h4 {
-      margin-top: 8px;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    pre {
-      display: block;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 16px;
-        padding-right: 16px;
-
-        font-family: 'Ubuntu Mono', monospace;
-        font-weight: 400;
-        font-style: normal;
-        
-
-        border-radius: 4px;
-
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    pre code {
-      padding: 0;
-      background-color: transparent;
-      color: #ffffff;
-    }
 
     time {
       font-size: 12px;
       color: #808080;
-    }
-
-    .page-body {
-      margin: 0;
-
-      display: grid;
-      grid-template-rows: min-content 1fr min-content;
-      grid-template-columns: 1fr;
-
-      font-family: Roboto, sans-serif;
-
-      font-family: Roboto, Arial, sans-serif;
-      background-image: url('https://storage.yandexcloud.net/xdr-bucket/wiki-vulong-development/bg.jpg');
-      background-repeat: repeat;
-    }
-
-    .page-main {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      grid-row: 2 / 3;
-      width: 100%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
     }
 
     li:not(header) {
@@ -143,14 +72,12 @@
 
   </style>  
 </head>
-
 <body class="page-body">
   <header class="page-header">
     <div class="container">
       <p class="header-title">Ingstrem</p>
       <span class="header-subtitle">Software &amp; applications</span>
-    </div>
-    
+    </div> 
       <nav class="header-nav">
       <div class="container">
         <ul class="header-nav__list">
@@ -165,18 +92,20 @@
           </li>
         </ul>
       </div>
-      </nav>
-    
+      </nav>   
   </header> 
 
 
-
-  <main class="page-main container"> 
-    <h1>Удаление мусора:</h1>
+  <main class="page-main"> 
+    <aside class="sidebar">
+  
+  </aside>
+    <div class="article">
+      <h1>Удаление мусора:</h1>
 <p><time>14 июля 2024</time></p>
 <hr>
 <p>Если вы никогда не задумывались о том, сколько же места реально занято на вашей машине Docker’ом, то можете быть неприятно удивлены выводом этой команды:</p>
-<pre><code>$ docker system df
+<pre><code class="language-bash">$docker ssystem df
 </code></pre>
 <p>Здесь отображено использование диска Docker’ом в различных разрезах:</p>
 <ul>
@@ -197,7 +126,8 @@
 </li>
 </ul>
 <p>Давайте представим себе систему, на которой установлен девственно чистый Docker, ни разу не участвовавший в запуске контейнеров и сборке образов. Его отчет об использовании дискового пространства будет выглядеть так:</p>
-<pre><code>$ docker system df
+<pre><code class="language-bash">$ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         0          0          0B         0B
 Containers     0          0          0B         0B
@@ -205,7 +135,7 @@ Local Volumes  0          0          0B         0B
 Build Cache    0          0          0B         0B
 </code></pre>
 <p>Запустим какой-нибудь контейнер, например, NGINX:</p>
-<pre><code>$ docker container run --name www -d -p 8000:80 nginx:1.16
+<pre><code class="language-bash">$ docker container run --name www -d -p 8000:80 nginx:1.16
 </code></pre>
 <p>Что происходит с диском:</p>
 <ul>
@@ -213,6 +143,7 @@ Build Cache    0          0          0B         0B
 <li>контейнеры (containers) занимают смешные 2 байта.</li>
 </ul>
 <pre><code>$ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          1          126M       0B (0%)
 Containers     1          1          2B         0B (0%)
@@ -225,6 +156,7 @@ Build Cache    0          0          0B         0B
 </code></pre>
 <p>Снова исследуем использование дискового пространства на хосте. Мы увидим, что контейнер (containers) занимает там 100 Мегабайт.</p>
 <pre><code>$ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          1          126M       0B (0%)
 Containers     1          1          104.9MB    0B (0%)
@@ -237,11 +169,14 @@ Build Cache    0          0          0B         0B
 /var/lib/docker/overlay2/83f177...630078/diff/test.img
 </code></pre>
 <p>Не вдаваясь в подробности можно отметить, что файл test.img удобно расположился на уровне чтения-записи, управляемом драйвером overlay2. Если же мы остановим наш контейнер, то хост подскажет нам, что это место, в принципе, можно высвободить:</p>
-<pre><code># Stopping the www container
+<pre><code class="language-bash">#Stopping the www container #
+
 $ docker stop www
 
-# Visualizing the impact on the disk usage
+# Visualizing the impact on the disk usage #
+
 $ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          1          126M       0B (0%)
 Containers     1          0          104.9MB    104.9MB (100%)
@@ -251,6 +186,7 @@ Build Cache    0          0          0B         0B
 <p>Как мы можем это сделать? Удалением контейнера, которое повлечет за собой очистку соответствующего пространства на уровне чтения-записи.</p>
 <p>С помощью следующей команды вы можете удалить все установленные контейнеры одним махом и очистить ваш диск от всех созданных ими на уровне чтения-записи файлов:</p>
 <pre><code>$ docker container prune
+
 WARNING! This will remove all stopped containers.
 Are you sure you want to continue? [y/N] y
 Deleted Containers:
@@ -260,6 +196,7 @@ Total reclaimed space: 104.9MB
 </code></pre>
 <p>Итак, мы высвободили 104,9 Мегабайта удалением контейнера. Но так как мы уже не используем скачанный ранее образ, то он тоже становится кандидатом на удаление и высвобождение наших ресурсов:</p>
 <pre><code>$ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         1          0          126M       126M (100%)
 Containers     0          0          0B         0B
@@ -294,6 +231,7 @@ $ docker container rm -f $(docker container ls -aq)
 </li>
 </ul>
 <pre><code>$ docker image ls -f dangling=true
+
 REPOSITORY  TAG      IMAGE ID         CREATED             SIZE
 none      none   21e658fe5351     12 minutes ago      71.3MB
 </code></pre>
@@ -302,6 +240,7 @@ none      none   21e658fe5351     12 minutes ago      71.3MB
 </code></pre>
 <p>Мы можем использовать также субкоманду prune:</p>
 <pre><code>$ docker image prune
+
 WARNING! This will remove all dangling images.
 Are you sure you want to continue? [y/N] y
 Deleted Images:
@@ -338,6 +277,7 @@ $ docker exec -ti db mongoimport \
 </code></pre>
 <p>Ну или мы можем использовать уже знакомую нам субкоманду prune</p>
 <pre><code>$ docker volume prune
+
 WARNING! This will remove all local volumes not used by at least one container.
 Are you sure you want to continue? [y/N] y
 Deleted Volumes:
@@ -365,10 +305,11 @@ Local Volumes  0          0          0B         0B
 Build Cache    0          0          0B         0B
 </code></pre>
 <p>Давайте соберем вторую версию нашего приложения, уже с использованием BuildKit. Для этого нам лишь необходимо установить переменную DOCKER_BUILDKIT в значение 1:</p>
-<pre><code>$ DOCKER_BUILDKIT=1 docker build -t app:2.0 
+<pre><code>$ DOCKER_BUILDKIT=1 docker build -t app:2.0
 </code></pre>
 <p>Если мы сейчас проверим использование диска, то увидим, что теперь там участвует кэш сборки (buid-cache):</p>
 <pre><code>$ docker system df
+
 TYPE           TOTAL      ACTIVE     SIZE       RECLAIMABLE
 Images         2          0          109.3MB    109.3MB (100%)
 Containers     0          0          0B         0B
@@ -377,6 +318,7 @@ Build Cache    11         0          8.949kB    8.949kB
 </code></pre>
 <p>Для его очистки воспользуемся следующей командой:</p>
 <pre><code>$ docker builder prune
+
 WARNING! This will remove all dangling build cache.
 Are you sure you want to continue? [y/N] y
 Deleted build cache objects:
@@ -389,6 +331,7 @@ Total reclaimed space: 8.949kB
 <h3>Очистить все!</h3>
 <p>Итак, мы рассмотрели очистку дискового пространства, занятого контейнерами, образами и томами. В этом нам помогает субкоманда prune. Но ее можно использовать и на системном уровне docker, и она очистит все, что только сможет:</p>
 <pre><code>$ docker system prune
+
 WARNING! This will remove:
   - all stopped containers
   - all networks not used by at least one container
@@ -398,8 +341,8 @@ WARNING! This will remove:
 Are you sure you want to continue? [y/N]
 </code></pre>
 
+    </div>
   </main> 
-
 <footer class="page-footer">
   <span></span>
   <p class="footer-caption">wiki.ingstrem.ru</p>

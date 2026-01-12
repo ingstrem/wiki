@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+  display: none;
+}
 html,
 body {
   margin: 0;
@@ -13,11 +16,25 @@ body {
   }
 } */
 
+.page-body {
+  margin: 0;
+
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: 1fr;
+
+  font-family: Roboto, sans-serif;
+
+  font-family: Roboto, Arial, sans-serif;
+  background-image: url('https://storage.yandexcloud.net/xdr-bucket/wiki-vulong-development/bg.jpg');
+  background-repeat: repeat;
+}
+
 .container {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1200px;
+  max-width: 1280px;
 }
 
 p {
@@ -55,6 +72,16 @@ a:not(:last-of-type) {
 
 a:hover {
   text-decoration: underline;
+}
+
+.page-main {
+  margin: 0 auto;
+  padding: 40px 15px 20px 15px;
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  column-gap: 40px;
 }
 .page-header {
   padding-left: 20px;
@@ -113,31 +140,28 @@ a:hover {
 .header-link.active {
   color: #212121
 }
-     /*footer*/
-     .page-footer {
-       padding-top: 16px;
-       padding-bottom: 16px;
-       grid-row: 3 / 4;
-       display: flex;
-       justify-content: space-between;
-       background-color: rgba(0, 0, 0, 0.2);
-     }
+.page-footer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  grid-row: 3 / 4;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
-     .footer-caption {
-       margin: 0;
-       padding: 0;
-       text-align: center;
-       color: #808080;
+.footer-caption {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #808080;
 
-       font-size: 14px;
-       font-style: normal;
-       font-weight: 400;
-       line-height: normal;
-     }
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+/* Стили главное страницы */
 .page-category {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  grid-row: 2 / 3;
   width: 100%;
 
   display: flex;
@@ -146,15 +170,53 @@ a:hover {
   align-items: start;
 }
 
+.page-category h1 {
+
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--light-green);
+}
+
 .page-category h2 {
-  margin-top: 32px;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--light-green);
+}
+
+.page-category blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.page-category blockquote>p {
+  margin-top: 0;
+
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 0.01em;
+  color: #807c72;
+}
+
+.page-category hr {
+  margin-bottom: 32px;
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: var(--dark-grey);
+}
+
+.page-category a:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
+.page-category p:not(:last-of-type) {
+  margin-bottom: 32px;
 }
 .article {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  grid-row: 2 / 3;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -162,7 +224,7 @@ a:hover {
 }
 
 /*link*/
- main.article.container a {
+main.article.container a {
   padding: 6px 12px;
   display: block;
   color: #000000;
@@ -181,6 +243,48 @@ main.article.container h3 {
 }
 
 
-    .sign {
-      background-image: linear-gradient(to top, #657c84, #677f87);
-    }
+.sign {
+  background-image: linear-gradient(to top, #657c84, #677f87);
+}
+/* Боковая навигационная панель */
+
+.sidebar {
+  grid-column: 1 / 2;
+
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+pre {
+  display: block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 400;
+  font-style: normal;
+
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+  color: #D9D9D9;
+  font-size: 14px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+}
+
+.terminal-color {
+  color: #bde052;
+  font-size: 14px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+}
+
+.comment-color {
+  color: #808080;
+}
