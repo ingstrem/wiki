@@ -20,13 +20,13 @@ caption: Step by step guide to learn Git and GitHub in 2026
 [Семантическое версионирование](/docs/git/semver)
 [Настройка репозитория](/docs/git/setting-up-repository)
 
-## Основы ветвления (branching basics)
+## 01 Основы ветвления (branching basics)
 
 - [Создание ветви](/docs/git/conventional-commits)
 - [Семантическое версионирование](/docs/git/semver)
 - [Основы слияния](/docs/git/setting-up-repository)
 
-## Стратегии слияния (merge strategies)
+## 02 Стратегии слияния (merge strategies)
 
 - [Rebase](/docs/git/rebase)
 
