@@ -2,6 +2,7 @@
   padding-left: 20px;
   padding-right: 20px;
   grid-row: 1 / 2;
+
 }
 
 .header-title {
@@ -22,11 +23,11 @@
 
 .header-nav {
   margin-top: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 
-  box-shadow: 0 4px 5px -3px #000;
-  background-color: #698567;
+  /* box-shadow: 0 4px 5px -3px #000; */
+  background-color: var(--light-green);
 }
 
 .header-nav__list {
@@ -43,9 +44,11 @@
   margin: 0;
   display: block;
 
+  font-family: "JetBrains Mono", monospace;
   font-size: 14px;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 700;
+  color: #04070C;
+  text-transform: uppercase;
 }
 
 .header-link:hover {

@@ -6,6 +6,7 @@ time: 4 марта 2025
 ---
 
 # Docker
+
 <time>{{time}}</time>
 
 ---
@@ -13,6 +14,11 @@ time: 4 марта 2025
 [Безопасность](/docs/devops/docker/security)
 [Удаление мусора](/docs/devops/docker/garbage-removal)
 
+## Container Registies
+
+- [Dockerhub](/docs/devops/docker/docker-compose-file)
+- [Github container registry](/docs/devops/docker/docker-compose-file)
+
 ## Docker compose
 
-[Файл docker-compose](/docs/devops/docker/docker-compose-file)
+- [Файл docker-compose](/docs/devops/docker/docker-compose-file)
