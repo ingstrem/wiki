@@ -8,7 +8,7 @@
 }
 
 .page-category h1 {
-
+  font-family: "JetBrains Mono", monospace;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -16,11 +16,21 @@
 }
 
 .page-category h2 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 16px;
 
-  font-size: 20px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid var(--green);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   color: var(--light-green);
+  text-transform: uppercase;
 }
 
 .page-category blockquote {
@@ -31,10 +41,12 @@
 .page-category blockquote>p {
   margin-top: 0;
 
+  font-family: "JetBrains Mono", monospace;
   font-size: 12px;
   line-height: 17px;
   letter-spacing: 0.01em;
-  color: #807c72;
+  color: var(--green);
+  text-transform: uppercase;
 }
 
 .page-category hr {
@@ -43,6 +55,11 @@
   height: 1px;
   border: none;
   background-color: var(--dark-grey);
+}
+
+.page-category a:hover {
+  color: var(--green);
+  text-decoration: none;
 }
 
 .page-category a:not(:last-of-type) {
@@ -56,4 +73,27 @@
 .page-category img {
   height: 60px;
   width: auto;
+}
+
+.page-category ul {
+  margin-top: 16px;
+}
+
+.page-category ul:not(:last-of-type) {
+  margin-bottom: 24px;
+}
+
+.page-category li {
+  padding-left: 16px;
+  position: relative;
+}
+
+.page-category li::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  top: 7px;
+  left: 0px;
+  background-color: var(--green);
 }

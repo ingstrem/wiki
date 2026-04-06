@@ -1,20 +1,22 @@
 .page-footer {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   grid-row: 3 / 4;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--dark-green);
 }
 
 .footer-caption {
   margin: 0;
   padding: 0;
   text-align: center;
-  color: #808080;
+  color: var(--light-green);
 
+  font-family: "JetBrains Mono", monospace;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
 }
