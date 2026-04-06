@@ -4,15 +4,15 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/bundle.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
@@ -30,19 +30,14 @@
   <script src="/bundle.js" defer></script>
   <style>
     :root {
-      --green: #698567;
-      --light-green: #B5C1AD;
-      --white: #FFFFFF;
+      --light-green: #4ADD8F;
+      --green: #3C6253;
+      --dark-green: #041B15;
+      --white: #BFD6E8;
       --orange: #CC7730;
       --grey: #807C72;
       --dark-grey: #616161;
     }
-
-  
-
-    
-
-
 
     time {
       font-size: 12px;
@@ -93,15 +88,117 @@
     <aside class="sidebar">
   
   </aside>
-    <div class="article">
+      <div class="page-category">
       <h1>Ansible</h1>
 <p><time>27 февраля 2025</time></p>
 <hr>
-<p><img src="https://img.shields.io/badge/ansible-black" alt="Static Badge"></p>
 <p>Ansible — это инструмент автоматизации с открытым исходным кодом, который используется для управления конфигурацией, развёртывания приложений и автоматизации задач. Он упрощает процесс управления инфраструктурой и её оркестрации за счёт использования декларативного языка для определения желаемых состояний и конфигураций. Ansible работает с помощью файлов YAML, называемых плейбуками, которые описывают задачи, выполняемые в удалённых системах. Он использует бессерверную архитектуру, то есть выполняет задачи на целевых компьютерах с помощью SSH или других удалённых протоколов без необходимости установки дополнительного программного обеспечения. Ansible широко используется для автоматизации повторяющихся задач, обеспечения согласованности и управления крупномасштабными развёртываниями в различных средах.</p>
+<h2>Container Registies</h2>
+<ul>
+<li><a href="/docs/devops/docker/docker-compose-file">Dockerhub</a></li>
+<li><a href="/docs/devops/docker/docker-compose-file">Github container registry</a></li>
+</ul>
+<h2>1. Core Concepts (20%)</h2>
+<ul>
+<li>Control node</li>
+<li>Managed nodes</li>
+<li>Inventory</li>
+<li>Playbooks, Modules, Roles</li>
+<li>Installation and Configuration:</li>
+</ul>
+<p>Installing Ansible on different OS
+Setting up Ansible configuration files (ansible.cfg)
+Basic Inventory setup (INI, YAML format)</p>
+<h2>2. Key Components (20%)</h2>
+<p>Inventory Management:
+Static inventory: defining hosts and groups
+Dynamic inventory: using plugins and external scripts for auto-discovery
+Ad-Hoc Commands:</p>
+<p>Running quick commands without playbooks (ansible -m)
+Playbooks and YAML:</p>
+<p>Writing and understanding Ansible playbooks
+Playbook structure (tasks, handlers, variables, loops, conditionals)
+Modules:</p>
+<p>Core modules: shell, command, copy, file, yum/apt, service
+Using facts and the setup module to gather system information</p>
+<h2>03 Automation with Playbooks</h2>
+<ul>
+<li>Defining variables in playbooks and roles</li>
+<li>Using ansible_facts for dynamic data in playbooks</li>
+<li>Loops and Conditional Execution:</li>
+<li>Conditional tasks using when</li>
+<li>Using Jinja2 templates for dynamic configuration files (.j2 files)</li>
+<li>Triggers for executing tasks only when certain conditions are met</li>
+</ul>
+<h2>04 Roles and Best Practices</h2>
+<ul>
+<li>Role Structure:</li>
+<li>Organizing playbooks with roles for reusability and modularity</li>
+<li>Role directory structure (tasks/, vars/, templates/, etc.)</li>
+<li>Ansible Galaxy:</li>
+<li>Using and downloading roles from Ansible Galaxy</li>
+<li>Creating and sharing your own roles</li>
+<li>Ansible Vault:</li>
+<li>Encrypting sensitive data in playbooks and roles</li>
+</ul>
+<h2>5. Advanced Techniques</h2>
+<ul>
+<li>Error Handling and Debugging:</li>
+</ul>
+<p>Debugging tasks (debug, assert)
+Error handling with ignore_errors and failed_when
+Task Delegation:</p>
+<p>Running tasks on different hosts (delegate_to, local_action)
+Dynamic Inventory Plugins:</p>
+<p>Using AWS, Azure, or custom plugins for dynamic inventory
+Custom Modules:</p>
+<p>Writing basic custom Ansible modules in Python or other languages</p>
+<h2>6. Integration and Advanced Features (10%)</h2>
+<ul>
+<li>
+<p>Ansible Tower/AWX:</p>
+</li>
+<li>
+<p>Using Ansible Tower or AWX for enterprise-level orchestration</p>
+</li>
+<li>
+<p>Job templates and workflows</p>
+</li>
+<li>
+<p>CI/CD Integration:</p>
+</li>
+<li>
+<p>Integrating Ansible with Jenkins, GitLab CI, or other CI/CD pipelines</p>
+</li>
+<li>
+<p>Ansible with Docker/Kubernetes:</p>
+</li>
+<li>
+<p>Managing Docker containers and Kubernetes clusters with Ansible</p>
+</li>
+<li>
+<p>Performance Optimization:</p>
+</li>
+<li>
+<p>Running Ansible at scale (forks, parallel execution, async tasks)</p>
+</li>
+</ul>
+<h2>07 Real-world Use Cases</h2>
+<ul>
+<li><a href="/docs/devops/ansible/nodejs">Node.js</a></li>
+<li>System Administration:</li>
+<li>Automating patching, user management, and system configuration.</li>
+<li>Network Automation:</li>
+<li>Using Ansible for managing network devices (routers, switches).</li>
+<li>Cloud Provisioning:</li>
+<li>Deploying infrastructure on AWS, Azure, or GCP with Ansible.</li>
+<li>Automating the deployment of applications (e.g., LAMP/LEMP stacks, Java apps).</li>
+</ul>
 
     </div>
   </main> 
+
+
 <footer class="page-footer">
   <span></span>
   <p class="footer-caption">wiki.ingstrem.ru</p>

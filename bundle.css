@@ -10,6 +10,13 @@ h5 {
   margin: 0;
   padding: 0;
 }
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 html,
 body {
   margin: 0;
@@ -19,12 +26,6 @@ body {
   box-sizing: border-box;
 }
 
-/* @media (max-width: 768px) {
-  .container {
-      font-size: 14px;
-  }
-} */
-
 .page-body {
   margin: 0;
 
@@ -32,11 +33,9 @@ body {
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
 
-  font-family: Roboto, sans-serif;
-
   font-family: Roboto, Arial, sans-serif;
-  background-image: url('https://storage.yandexcloud.net/xdr-bucket/wiki-vulong-development/bg.jpg');
-  background-repeat: repeat;
+  background-color: #04070C;
+  color: var(--white);
 }
 
 .container {
@@ -50,7 +49,7 @@ p {
   margin: 0;
   margin-top: 16px;
   padding: 0;
-  color: #ffffff;
+  /* color: #ffffff; */
   line-height: 20px;
   font-size: 14px;
   font-style: normal;
@@ -71,7 +70,7 @@ code {
 a {
   display: block;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -96,6 +95,7 @@ a:hover {
   padding-left: 20px;
   padding-right: 20px;
   grid-row: 1 / 2;
+
 }
 
 .header-title {
@@ -116,11 +116,11 @@ a:hover {
 
 .header-nav {
   margin-top: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 
-  box-shadow: 0 4px 5px -3px #000;
-  background-color: #698567;
+  /* box-shadow: 0 4px 5px -3px #000; */
+  background-color: var(--light-green);
 }
 
 .header-nav__list {
@@ -137,9 +137,11 @@ a:hover {
   margin: 0;
   display: block;
 
+  font-family: "JetBrains Mono", monospace;
   font-size: 14px;
-  font-weight: 400;
-  color: #fff;
+  font-weight: 700;
+  color: #04070C;
+  text-transform: uppercase;
 }
 
 .header-link:hover {
@@ -150,24 +152,26 @@ a:hover {
   color: #212121
 }
 .page-footer {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   grid-row: 3 / 4;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--dark-green);
 }
 
 .footer-caption {
   margin: 0;
   padding: 0;
   text-align: center;
-  color: #808080;
+  color: var(--light-green);
 
+  font-family: "JetBrains Mono", monospace;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
 }
 /* Стили главное страницы */
 .page-category {
@@ -180,7 +184,7 @@ a:hover {
 }
 
 .page-category h1 {
-
+  font-family: "JetBrains Mono", monospace;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -188,11 +192,21 @@ a:hover {
 }
 
 .page-category h2 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 16px;
 
-  font-size: 20px;
+  display: block;
+  width: 100%;
+
+  border: 1px solid var(--green);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   color: var(--light-green);
+  text-transform: uppercase;
 }
 
 .page-category blockquote {
@@ -203,10 +217,12 @@ a:hover {
 .page-category blockquote>p {
   margin-top: 0;
 
+  font-family: "JetBrains Mono", monospace;
   font-size: 12px;
   line-height: 17px;
   letter-spacing: 0.01em;
-  color: #807c72;
+  color: var(--green);
+  text-transform: uppercase;
 }
 
 .page-category hr {
@@ -215,6 +231,11 @@ a:hover {
   height: 1px;
   border: none;
   background-color: var(--dark-grey);
+}
+
+.page-category a:hover {
+  color: var(--green);
+  text-decoration: none;
 }
 
 .page-category a:not(:last-of-type) {
@@ -228,6 +249,29 @@ a:hover {
 .page-category img {
   height: 60px;
   width: auto;
+}
+
+.page-category ul {
+  margin-top: 16px;
+}
+
+.page-category ul:not(:last-of-type) {
+  margin-bottom: 24px;
+}
+
+.page-category li {
+  padding-left: 16px;
+  position: relative;
+}
+
+.page-category li::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  top: 7px;
+  left: 0px;
+  background-color: var(--green);
 }
 .article {
   width: 100%;
@@ -266,7 +310,8 @@ main.article.container h3 {
   grid-column: 1 / 2;
 
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  border: 1px solid var(--green);
 }
 pre {
   display: block;

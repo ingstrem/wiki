@@ -24,9 +24,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>
     
-	    Kubernetes
+	    Удаление мусора
      | wiki</title>
-  <meta name="description" content="Unix Оболочка Bash">
+  <meta name="description" content="">
   <script src="/bundle.js" defer></script>
   <style>
     :root {
@@ -89,7 +89,43 @@
   
   </aside>
     <div class="article">
-      
+      <h1>Удаление мусора:</h1>
+<p><time>14 июля 2024</time></p>
+<hr>
+<ul>
+<li>
+<p>name: Installing Nodejs
+get<em>url:
+url: &quot;https://deb.nodesource.com/setup</em>.x&quot;
+dest: ~/nodejs
+mode: 0755</p>
+</li>
+<li>
+<p>name: Nodejs Package
+command: ~/nodejs
+args:
+creates: /etc/apt/sources.list.d/nodesource.list</p>
+</li>
+<li>
+<p>name: Yarn GPG
+apt_key:
+url: https://dl.yarnpkg.com/debian/pubkey.gpg
+state: present</p>
+</li>
+<li>
+<p>name: Importing Yarn Package
+copy:
+content: &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot;
+dest: /etc/apt/sources.list.d/yarn.list</p>
+</li>
+<li>
+<p>name: Installing Nodejs + Yarn
+apt:
+name: - nodejs - yarn
+update_cache: true</p>
+</li>
+</ul>
+
     </div>
   </main> 
 <footer class="page-footer">
