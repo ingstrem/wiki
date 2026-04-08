@@ -1,3 +1,12 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -17,6 +26,18 @@ ol {
   padding: 0;
   list-style: none;
 }
+:root {
+  --light-green: #4ADD8F;
+  --green: #3C6253;
+  --dark-green: #041B15;
+  --blue: #3B5B66;
+  --light-blue: #00;
+  --white: #BFD6E8;
+  --orange: #D47F25;
+  --grey: #807C72;
+  --dark-grey: #616161;
+  /* --tablet: 900px; */
+}
 html,
 body {
   margin: 0;
@@ -30,10 +51,17 @@ body {
   margin: 0;
 
   display: grid;
+
+  @media (min-width: 900px) {
+    grid-template-rows: 1fr min-content;
+  }
+
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
 
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto,
+  Arial,
+  sans-serif;
   background-color: #04070C;
   color: var(--white);
 }
@@ -192,6 +220,24 @@ a:hover {
 }
 
 .page-category h2 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+
+  display: block;
+  width: 100%;
+
+  /* border: 1px solid var(--green); */
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
+.page-category h3 {
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 16px;
@@ -307,11 +353,16 @@ main.article.container h3 {
 /* Боковая навигационная панель */
 
 .sidebar {
+  display: none;
   grid-column: 1 / 2;
-
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.2); */
   border: 1px solid var(--green);
+}
+
+@media (min-width: 900px) {
+  .sidebar {
+    display: block;
+  }
 }
 pre {
   display: block;

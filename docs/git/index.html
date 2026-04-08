@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="/bundle.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,16 +27,9 @@
      | wiki</title>
   <meta name="description" content="Система контроля версий Git">
   <script src="/bundle.js" defer></script>
+  <script src="/serviceworker.js" defer></script>
+   <script type="module" src="/db.js"></script>
   <style>
-    :root {
-      --light-green: #4ADD8F;
-      --green: #3C6253;
-      --dark-green: #041B15;
-      --white: #BFD6E8;
-      --orange: #CC7730;
-      --grey: #807C72;
-      --dark-grey: #616161;
-    }
 
     time {
       font-size: 12px;
@@ -95,23 +87,24 @@
 </blockquote>
 <hr>
 <p>Система контроля версий (VCS) — это инструмент, помогающий разработчикам управлять изменениями в коде с течением времени. Она позволяет одновременно существовать нескольким версиям проекта, упрощая сотрудничество с другими и ведение учета всех изменений.</p>
-<h2>Оглавление</h2>
+<h3>Оглавление</h3>
 <p><a href="/docs/git/conventional-commits">Соглашение о коммитах</a>
 <a href="/docs/git/semver">Семантическое версионирование</a>
 <a href="/docs/git/setting-up-repository">Настройка репозитория</a></p>
-<h2>01 Основы ветвления (branching basics)</h2>
+<h2>Pfuk</h2>
+<h3>01 Основы ветвления (branching basics)</h3>
 <ul>
 <li><a href="/docs/git/conventional-commits">Создание ветви</a></li>
 <li><a href="/docs/git/semver">Семантическое версионирование</a></li>
 <li><a href="/docs/git/setting-up-repository">Основы слияния</a></li>
 </ul>
-<h2>02 Стратегии слияния (merge strategies)</h2>
+<h3>02 Стратегии слияния (merge strategies)</h3>
 <ul>
 <li><a href="/docs/git/rebase">Rebase</a></li>
 </ul>
-<h2>Сотрудничество на GitHub</h2>
-<h2>Теггирование (tagging)</h2>
-<h2>Документирование (documentation)</h2>
+<h3>Сотрудничество на GitHub</h3>
+<h3>Теггирование (tagging)</h3>
+<h3>Документирование (documentation)</h3>
 <ul>
 <li><a href="/docs/git/conventional-commits">Markdown</a></li>
 <li><a href="/docs/git/semver">Project Readme</a></li>
@@ -121,7 +114,6 @@
 
     </div>
   </main> 
-
 
 <footer class="page-footer">
   <span></span>
