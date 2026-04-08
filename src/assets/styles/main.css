@@ -11,10 +11,17 @@ body {
   margin: 0;
 
   display: grid;
+
+  @media (min-width: 900px) {
+    grid-template-rows: 1fr min-content;
+  }
+
   grid-template-rows: min-content 1fr min-content;
   grid-template-columns: 1fr;
 
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto,
+  Arial,
+  sans-serif;
   background-color: #04070C;
   color: var(--white);
 }

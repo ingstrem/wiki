@@ -12,6 +12,16 @@ caption: Данный раздел содержит исчерпывающую �
 
 ---
 
-## Типы данных
+- [string](/docs/git/setting-up-repository)
+- [numberg](/docs/git/setting-up-repository)
+- [boolean](/docs/git/setting-up-repository)
 
-## Структуры данных
+## Основы языка
+
+### Типы данных
+
+- [string](/docs/git/setting-up-repository)
+- [numberg](/docs/git/setting-up-repository)
+- [boolean](/docs/git/setting-up-repository)
+
+### Объекты
