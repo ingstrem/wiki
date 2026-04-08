@@ -1,9 +1,14 @@
 /* Боковая навигационная панель */
 
 .sidebar {
+  display: none;
   grid-column: 1 / 2;
-
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.2); */
   border: 1px solid var(--green);
+}
+
+@media (min-width: 900px) {
+  .sidebar {
+    display: block;
+  }
 }
