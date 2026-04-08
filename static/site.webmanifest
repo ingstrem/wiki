@@ -1,7 +1,48 @@
 {
   "name": "WIKI Ingstrem",
   "short_name": "wiki",
+  "start_url": "/",
+  "version": "1",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay"],
+  "background_color": "#121212",
+  "description": "База знаний",
+  "lang": "ru-RU",
+  "dir": "ltr",
+  "id": "/",
+  "orientation": "any",
+  "theme_color": "#292929",
+  "screenshots": [
+    {
+      "src": "https://storage.yandexcloud.net/xdr-bucket/cp/screenshot.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Application"
+    },
+    {
+      "src": "https://storage.yandexcloud.net/xdr-bucket/cp/screenshot-2.png",
+      "sizes": "320x640",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
   "icons": [
+    {
+      "src": "/favicons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg"
+    },
+    {
+      "src": "/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
     {
       "src": "./favicons/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -12,8 +53,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#242424",
-  "background_color": "#242424",
-  "display": "standalone"
+  ]
 }
