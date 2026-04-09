@@ -1,37 +1,61 @@
 ---
-title: Удаление мусора
+title: Установка Node.js с помощью Ansible
+description: Как установкить Node.js с помощью Ansible
 layout: article-layout
 time: 14 июля 2024
+caption: ansible
 ---
 
-# Удаление мусора:
+# Установка Node.js:
+
+> {{caption }}
 
 <time>{{time}}</time>
 
 ---
 
-- name: Installing Nodejs
-  get*url:
-  url: "https://deb.nodesource.com/setup*{{ nodejs_version }}.x"
-  dest: ~/nodejs
-  mode: 0755
+### Установка
 
-- name: Nodejs Package
-  command: ~/nodejs
-  args:
-  creates: /etc/apt/sources.list.d/nodesource.list
+```yaml
+---
+- name: Установка Node.js на сервер
+  hosts: servers
+  become: yes
+  vars:
+    nodejs_version: 22
 
-- name: Yarn GPG
-  apt_key:
-  url: https://dl.yarnpkg.com/debian/pubkey.gpg
-  state: present
+  tasks:
+    - name: Скачивание пакета Node.js
+      get_url:
+        url: "https://deb.nodesource.com/setup_{ { nodejs_version }}.x"
+        dest: ~/nodejs
+        mode: 0755
 
-- name: Importing Yarn Package
-  copy:
-  content: "deb https://dl.yarnpkg.com/debian/ stable main"
-  dest: /etc/apt/sources.list.d/yarn.list
+    - name: Запуск скрипта установки пакета Node.js
+      command: ~/nodejs
+      args:
+        creates: /etc/apt/sources.list.d/nodesource.list
 
-- name: Installing Nodejs + Yarn
-  apt:
-  name: - nodejs - yarn
-  update_cache: true
+    - name: Установка Node.js
+      apt:
+        name:
+          - nodejs
+        update_cache: true
+```
+
+### Проверка установленой версии Node.js
+
+```yaml
+---
+- name: Проверка версии Node.js
+  hosts: all
+  tasks:
+    - name: Получение текущей версии Node.js
+      command: node --version
+      register: node_version
+      changed_when: false
+
+    - name: Отображение текущей версии Node.js
+      debug:
+        msg: "Node.js version is { { node_version.stdout }}."
+```

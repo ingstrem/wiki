@@ -99,9 +99,9 @@ Writing basic custom Ansible modules in Python or other languages
 
 - Running Ansible at scale (forks, parallel execution, async tasks)
 
-## 07 Real-world Use Cases
+### 07 Примеры использования в реальных задачах
 
-- [Node.js](/docs/devops/ansible/nodejs)
+- [Установка Node.js](/docs/devops/ansible/nodejs)
 - System Administration:
 - Automating patching, user management, and system configuration.
 - Network Automation:
