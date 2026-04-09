@@ -23,9 +23,9 @@
   <meta name="theme-color" content="#ffffff">
   <title>
     
-	    Удаление мусора
+	    Установка Node.js с помощью Ansible
      | wiki</title>
-  <meta name="description" content="">
+  <meta name="description" content="Как установкить Node.js с помощью Ansible">
   <script src="/bundle.js" defer></script>
   <script src="/serviceworker.js" defer></script>
    <script type="module" src="/db.js"></script>
@@ -80,43 +80,53 @@
     <aside class="sidebar">
   
   </aside>
-    <div class="article">
-      <h1>Удаление мусора:</h1>
+    <div class="page-article">
+      <h1>Установка Node.js:</h1>
+<blockquote>
+<p>ansible</p>
+</blockquote>
 <p><time>14 июля 2024</time></p>
 <hr>
-<ul>
-<li>
-<p>name: Installing Nodejs
-get<em>url:
-url: &quot;https://deb.nodesource.com/setup</em>.x&quot;
-dest: ~/nodejs
-mode: 0755</p>
-</li>
-<li>
-<p>name: Nodejs Package
-command: ~/nodejs
-args:
-creates: /etc/apt/sources.list.d/nodesource.list</p>
-</li>
-<li>
-<p>name: Yarn GPG
-apt_key:
-url: https://dl.yarnpkg.com/debian/pubkey.gpg
-state: present</p>
-</li>
-<li>
-<p>name: Importing Yarn Package
-copy:
-content: &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot;
-dest: /etc/apt/sources.list.d/yarn.list</p>
-</li>
-<li>
-<p>name: Installing Nodejs + Yarn
-apt:
-name: - nodejs - yarn
-update_cache: true</p>
-</li>
-</ul>
+<h3>Установка</h3>
+<pre><code class="language-yaml">---
+- name: Установка Node.js на сервер
+  hosts: servers
+  become: yes
+  vars:
+    nodejs_version: 22
+
+  tasks:
+    - name: Скачивание пакета Node.js
+      get_url:
+        url: &quot;https://deb.nodesource.com/setup_{ { nodejs_version }}.x&quot;
+        dest: ~/nodejs
+        mode: 0755
+
+    - name: Запуск скрипта установки пакета Node.js
+      command: ~/nodejs
+      args:
+        creates: /etc/apt/sources.list.d/nodesource.list
+
+    - name: Установка Node.js
+      apt:
+        name:
+          - nodejs
+        update_cache: true
+</code></pre>
+<h3>Проверка установленой версии Node.js</h3>
+<pre><code class="language-yaml">---
+- name: Проверка версии Node.js
+  hosts: all
+  tasks:
+    - name: Получение текущей версии Node.js
+      command: node --version
+      register: node_version
+      changed_when: false
+
+    - name: Отображение текущей версии Node.js
+      debug:
+        msg: &quot;Node.js version is { { node_version.stdout }}.&quot;
+</code></pre>
 
     </div>
   </main> 
